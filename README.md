@@ -23,7 +23,14 @@ First, we'll create a project, which acts as a container for your applications a
 
 1.  After signing into the [Authgear Portal](https://portal.authgear.com/), you will be prompted to create a new project.
 2.  Enter a **Project Name** (e.g., `my-webflow-site`). This name will be used to form your unique Authgear endpoint: `https://<your-project-name>.authgear.cloud`.
+
+![Project Name](/assets/images/fig1-project-name.png)
+
 3.  Click **"Create Project"**.
+4.  Follow the wizard to setup the project, for "How should users sign in", select **"Email and Password"**. For passkey and 2FA options, select according to your preference.
+
+![Choose Email and Password](/assets/images/fig2-email-password.png)
+
 
 ## Step 2: Create and Configure an Application
 
@@ -32,11 +39,16 @@ Now that you have a project, you need to create an application within it.
 1.  In the Authgear Portal, navigate to **Applications** in the left-hand menu.
 2.  Click the **+ Add Application** button in the top toolbar.
 3.  In the dialog, enter an **Application Name** (e.g., "Webflow Site") and select the **Single Page Application** type. Click **"Save"**.
+
+![Select Single Page Application](/assets/images/fig3-spa.png)
+
 4.  On the next screen, Authgear shows tutorials for various frameworks. Click **Next** to skip this and go to your application's configuration page.
 5.  You will now be on the application configuration page. Under the **URIs** section, find the **Authorized Redirect URIs** field.
 6.  Enter the root URL of your published Webflow site (e.g., `https://my-awesome-site.webflow.io/`). **Note that the trailing "/" in the above URLs must be included.**
 7.  Click **Save** at the bottom of the page.
 8.  Finally, go to the **Application Credentials** section at the top of the page. You will find your **Client ID** and **Endpoint**. Keep this page open; you will need these values in a later step.
+
+![Copy Client ID and Endpoint, enter URL of Webflow site](/assets/images/fig4-auth-redirect-uri.png)
 
 ---
 
@@ -239,10 +251,16 @@ Now that you have a project, you need to create an application within it.
     3.  Configure it: Name `points_collected`, Type **Number**. Click **"Save"**.
     4.  In the list, set **Token Bearer Access Right** and **End-user Access Right** to **Read-only**.
 
+![Add Custom Attributes](/assets/images/fig5-add-custom-attr.png)
+![Set Custom Attributes Access Rights](/assets/images/fig6-set-custom-attr.png)
+
+
 2.  **Assign a Value to Your User**:
     1.  Navigate to **User Management > Users**, and click on your test user.
     2.  In the **Profile** Tab, scroll down to **Custom Attributes**.
     3.  Enter a number (e.g., `50`) in the **Points Collected** field and click **"Save"**.
+
+![Assign Custom Attributes](/assets/images/fig7-assign-custom-attr.png)
 
 ### 7b. Display the Custom Attribute in Webflow
 
