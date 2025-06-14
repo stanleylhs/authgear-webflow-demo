@@ -10,6 +10,8 @@ This guide will walk you through integrating Authgear into your Webflow website.
 *   Display standard and custom user information in a protected section.
 *   Create and manage gated content visible only to logged-in users.
 
+You can check the end product of this guide in [here](https://authgear-webflow-test.webflow.io/), you can also clone the Webflow project here.
+
 ### Prerequisites
 
 *   An active **Authgear account**. If you don't have one, you can [sign up for free](https://www.authgear.com/cloud).
