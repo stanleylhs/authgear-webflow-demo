@@ -24,14 +24,18 @@ You can check the end product of this guide in [here](https://authgear-webflow-d
 First, we'll create a project, which acts as a container for your applications and users.
 
 1.  After signing into the [Authgear Portal](https://portal.authgear.com/), you will be prompted to create a new project.
-2.  Enter a **Project Name** (e.g., `my-webflow-site`). This name will be used to form your unique Authgear endpoint: `https://<your-project-name>.authgear.cloud`.
+2.  Enter a **Project Name** (e.g., `My Webflow Site`). 
+3.  Complete the endpoint domain to form your unique Authgear endpoint: `https://<your-project-name>.authgear.cloud`. Click **"Next"**.
 
 ![Project Name](/assets/images/fig1-project-name.png)
 
-3.  Click **"Create Project"**.
-4.  Follow the wizard to setup the project, for "How should users sign in", select **"Email and Password"**. For passkey and 2FA options, select according to your preference.
+4.  Choose how you would like your end-users to login. In this tutorial, make sure we choose Email here.
 
-![Choose Email and Password](/assets/images/fig2-email-password.png)
+![Choose how end-users login](/assets/images/fig2-email-password.png)
+
+5.  Add branding by uploading logo and choosing the colors you like.
+
+![Choose a Credential Combination](/assets/images/fig2a-branding.png)
 
 
 ## Step 2: Create and Configure an Application
