@@ -1,8 +1,10 @@
 # Using Authgear in Webflow: A Step-by-Step Guide
 
-With Webflow sunsetting its native User Accounts feature, many developers are looking for a robust, secure, and easy-to-integrate authentication solution. Authgear is the perfect replacement, offering a powerful suite of features and a generous free tier to get you started.
+With Webflow sunsetting its native User Accounts feature, many developers face the challenge of finding a secure, robust, and easy-to-integrate solution. Now, imagine you're building a loyalty program website—a vibrant digital haven where members effortlessly log in to check their personalized content and track their reward points. Your community is excited to explore exclusive benefits and see their progress, but with the traditional authentication method gone, how do you ensure a flawless, secure experience?
 
-This guide will walk you through integrating Authgear into your Webflow website. By the end, you'll be able to:
+Enter Authgear. This powerful tool steps in to bridge the gap left by Webflow. Authgear’s generous free tier and versatile suite of features make it the ideal replacement for managing user authentication on your loyalty program site. Whether you’re a seasoned developer or just beginning your journey, integrating Authgear ensures your members can seamlessly log in, interact with exclusive content, and feel secure every step of the way.
+
+In this guide, you’ll embark on a step-by-step process to integrate Authgear into your Webflow website. By the end, you’ll have learned to:
 
 *   Create an Authgear project and an application.
 *   Add Login, Logout, and Sign Up buttons that show/hide correctly.
@@ -52,7 +54,7 @@ Now that you have a project, you need to create an application within it.
 5.  You will now be on the application configuration page. Under the **URIs** section, find the **Authorized Redirect URIs** field.
 6.  Enter the root URL of your published Webflow site (e.g., `https://my-awesome-site.webflow.io/`). **Note that the trailing "/" in the above URLs must be included.**
 7.  Click **Save** at the bottom of the page.
-8.  Finally, go to the **Application Credentials** section at the top of the page. You will find your **Client ID** and **Endpoint**. Keep this page open; you will need these values in a later step.
+8.  Finally, make a note on your **Client ID** and **Endpoint**. You will need these values in a later step.
 
 ![Copy Client ID and Endpoint, enter URL of Webflow site](/assets/images/fig4-auth-redirect-uri.png)
 
@@ -214,7 +216,7 @@ Now that you have a project, you need to create an application within it.
 
 1.  In the **Webflow Designer**, add two **Paragraph** elements to your page.
 2.  Assign them IDs and text:
-    *   First Paragraph: **ID** `user-email`, Text `User Email:`
+    *   First Paragraph: **ID** `user-email`, Text `Membership Email:`
     *   Second Paragraph: **ID** `user-email-verified`, Text `Verification Status:`
 3.  In your **Footer Code**, update the `updateUI` function to fetch and **append** this data.
 
@@ -271,7 +273,7 @@ Now that you have a project, you need to create an application within it.
 ### 7b. Display the Custom Attribute in Webflow
 
 1.  In the **Webflow Designer**, add a new **Paragraph** element to your page.
-2.  Give it the **ID** `points-collected` and set its text to `Points Collected:`.
+2.  Give it the **ID** `points-collected` and set its text to `FlowPoints Collected:`.
 3.  In your **Footer Code**, update the `updateUI` function again to fetch and display this value.
 
     ```javascript
@@ -398,9 +400,9 @@ const updateUI = async () => {
     try {
       const userInfo = await authgearClient.fetchUserInfo();
       // Clear previous data to prevent duplication on UI refreshes
-      document.getElementById("user-email").textContent = 'User Email:';
+      document.getElementById("user-email").textContent = 'Membership Email:';
       document.getElementById("user-email-verified").textContent = 'Verification Status:';
-      document.getElementById("points-collected").textContent = 'Points Collected:';
+      document.getElementById("points-collected").textContent = 'FlowPoints Collected:';
       
       // Append new data
       document.getElementById("user-email").textContent += ` ${userInfo.email}`;
